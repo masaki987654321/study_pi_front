@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- -----------firebase CDN------------- -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+
+    <script src="./JavaScript/firebase.js"></script>
+
+        <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+        integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
+        crossorigin="anonymous"></script>
+
+    <!-- Materialize CDN -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body onload="readRecordData()">
+    <!-- ヘッダー -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">サービス名</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="mypage.html">マイページ</a></li>
+                <li onclick="logout();">ログアウト</li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="mypage.html">マイページ</a></li>
+        <li onclick="logout();">ログアウト</li>
+    </ul>
+
+    <blockquote>
+      <h5>User Ranking</h5>
+    </blockquote>
+
+    <!-- 勉強時間ランキングを表示 -->
+
+    <div id="graph" class="col s12 white">
+
+        <button type="button" class="waves-effect waves-light btn" onClick="DayRecord()">
+            Day
+        </button>
+
+        <button type="button" class="waves-effect waves-light btn" onClick="WeeklyRecord()">
+            Weekly
+        </button>
+
+        <button type="button" class="waves-effect waves-light btn" onClick="MonthlyRecord()">
+            Monthly
+        </button>
+
+        <button type="button" class="waves-effect waves-light btn" onClick="AllRecord()">
+            All
+        </button>
+
+    </div>
+
+
+     <div id="table" class="col s12 white">
+        <!-- ユーザーの記録一覧を表示 -->
+        <div id="getData"></div>
+        <table id="targetTable" >
+
+            <tr>
+            　　 <th>ランキング</th>
+                <th>ユーザ名</th>
+                <th>勉強時間</th>
+            </tr>
+
+
+            </div>
+        </table>
+    </div>
+
+    <script src="./JavaScript/index.js"></script>
+</body>
+
+</html>

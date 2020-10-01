@@ -1,0 +1,22 @@
+td,
+th {
+    padding: 15px 5px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+    width: 10px;
+}
+
+td {
+    font-size: 18px;
+}
+
+img {
+    width: 30%;
+}
+
+table {
+    width: 70%;
+    margin: 3px auto;
+}
